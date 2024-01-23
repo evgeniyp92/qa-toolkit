@@ -1,5 +1,6 @@
 # Todos for the project
 
+- [ ] Integrate datagrid pro
 - [ ] Display modal to update contents of an entry
 - [ ] Sync list of personnel with database from excel file
 - [ ] Use ReactQuery or Zustand?

@@ -1,7 +1,13 @@
 import React from "react";
+import CustomDataGrid from "@/components/DataGrid";
 
 const TechnicalOrders = () => {
-  return <div>TCTO Management</div>;
+  return (
+    <div>
+      TCTO Management
+      <CustomDataGrid />
+    </div>
+  );
 };
 
 export default TechnicalOrders;
