@@ -16,10 +16,10 @@ const columns = [
   { field: "col2", headerName: "Column 2", width: 150 },
 ];
 
-const CustomDataGrid = () => {
+const CustomDataGrid = ({ customRows, customColumns }) => {
   return (
     <div style={{ height: 400, width: "100%" }}>
-      <DataGridPro rows={rows} columns={columns} />
+      <DataGridPro rows={customRows || rows} columns={customColumns || columns} />
     </div>
   );
 };
