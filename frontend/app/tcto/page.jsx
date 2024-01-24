@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import CustomDataGrid from "@/components/DataGrid";
+import { uploadToS3 } from "@/lib/uploadToS3";
 
 const tctos = [
   { id: 1, number: 1, title: "TCTO 1", status: "Open", priority: "High", suspense: new Date(2022, 0, 1) },
@@ -36,6 +39,7 @@ const TechnicalOrders = () => {
     <div>
       TCTO Management
       <CustomDataGrid customRows={tctos} customColumns={columns} />
+      <button onClick={() => uploadToS3()}>Do the thing</button>
     </div>
   );
 };
