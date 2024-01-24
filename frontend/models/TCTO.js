@@ -7,6 +7,7 @@ const TCTOSchema = new mongoose.Schema({
   priority: String,
   issued: Date,
   suspenseDays: Number,
+  fileLink: String,
 });
 
 export default mongoose.models.TCTO || mongoose.model("TCTO", TCTOSchema);
