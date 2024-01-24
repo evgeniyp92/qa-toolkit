@@ -1,5 +1,7 @@
 import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 
+// TODO: Replace this with the serverless version that uploads securely to a one-time URL
+
 export const s3worker = new S3Client({
   region: process.env.NEXT_PUBLIC_S3_REGION,
   credentials: {
@@ -22,22 +24,3 @@ export const uploadToS3 = async () => {
     console.error(err);
   }
 };
-
-/**
- * [
-    {
-        "AllowedHeaders": ["*"],
-        "AllowedMethods": [
-            "GET",
-            "POST",
-            "PATCH",
-            "PUT",
-            "HEAD",
-            "DELETE"
-        ],
-        "AllowedOrigins": ["*"],
-        "ExposeHeaders": []
-        "MaxAgeSeconds": 3000
-    }
-]
- */
