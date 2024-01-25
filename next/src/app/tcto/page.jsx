@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import CustomDataGrid from "@/components/DataGrid";
 import { uploadToS3 } from "@/lib/uploadToS3";
 import TCTO from "@/models/TCTO";
 import dbConnect from "@/lib/dbConnect";
@@ -42,19 +41,10 @@ const TechnicalOrders = () => {
   return (
     <div>
       TCTO Management
-      <CustomDataGrid customRows={tctos} customColumns={columns} />
       <button onClick={() => uploadToS3()}>Do the thing</button>
       <button
         onClick={async () => {
-          await dbConnect();
-          const result = await TCTO.create({
-            title: "Test title",
-            status: "Open",
-            priority: "High",
-            issued: new Date(),
-            suspenseDays: 90,
-            fileLink: null,
-          });
+          console.log("dont click this, go to the api route instead");
         }}>
         Create test database record
       </button>
