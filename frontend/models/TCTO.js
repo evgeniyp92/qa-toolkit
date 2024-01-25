@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 const TCTOSchema = new mongoose.Schema({
-  _id: String,
   title: String,
   status: String,
   priority: String,

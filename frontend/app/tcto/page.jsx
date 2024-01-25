@@ -3,6 +3,8 @@
 import React from "react";
 import CustomDataGrid from "@/components/DataGrid";
 import { uploadToS3 } from "@/lib/uploadToS3";
+import TCTO from "@/models/TCTO";
+import dbConnect from "@/lib/dbConnect";
 
 const tctos = [
   { id: 1, number: 1, title: "TCTO 1", status: "Open", priority: "High", suspense: new Date(2022, 0, 1) },
@@ -42,6 +44,20 @@ const TechnicalOrders = () => {
       TCTO Management
       <CustomDataGrid customRows={tctos} customColumns={columns} />
       <button onClick={() => uploadToS3()}>Do the thing</button>
+      <button
+        onClick={async () => {
+          await dbConnect();
+          const result = await TCTO.create({
+            title: "Test title",
+            status: "Open",
+            priority: "High",
+            issued: new Date(),
+            suspenseDays: 90,
+            fileLink: null,
+          });
+        }}>
+        Create test database record
+      </button>
     </div>
   );
 };
